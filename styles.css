@@ -1,16 +1,37 @@
 :root {
     --light-green: #BDCBB4;
     --dark-green: #6C875C;
+    --black: #000
+}
+body {
+  background-color: var(--dark-green);
+  font-size: 15px;
 }
 
 header {
     display: flex;
+    height: 10vh;
     background-color: var(--dark-green);
     align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    padding-bottom: 0.3em;
+    border-bottom: 0.1em solid var(--light-green);
 }
 
-body {
-    background-color: var(--dark-green);
+.logo {
+  height: 5em;
+}
+
+.title {
+margin-left: 3%;
+letter-spacing: 0.1em
+}
+
+
+
+main {
+  height: 80vh;
 }
 
 h1 {
@@ -21,25 +42,24 @@ h1 {
 
 .spec-button {
     display: flex;
-    flex-direction: row;
-    padding: 200px 300px;
+    flex-direction: column;
+    padding: 20px 30px;
     background-color: var(--light-green);
     color: var(--light-green);
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    border: 3px solid;
-    border-radius: 15px;
+    border: 0.1em solid var(--black);
+    border-radius: 25px;
 }
 
 .image {
-    height: 500px;
+    height: 20em;
+    border-radius: 50%;
 }
 
-.image1 {
-    height: 200px;
-}
+
 
 .button-container {
     display: flex;
@@ -55,7 +75,8 @@ h1 {
 .review-input {
     margin: auto;
     display: flex;
-    padding: 150px 600px;
+    width: 80vw;
+    height: 20vh;
     background-color: var(--light-green);
     border-bottom: 2px solid var(--light-green);
     margin-top: 20px;
@@ -65,21 +86,26 @@ h1 {
     margin: auto;
     display: flex;
     background-color: var(--light-green);
-    padding: 40px 200px;
-    margin-top: 20px;
+    margin-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     font-size: 30px;
+    letter-spacing: 0.1em;
+    font-weight: bold;
     font-family: Inter;
-    color: var(--light-green);
+    color: var(--black);
+    border: 0.05em solid var(--black);
+    border-radius: 0.2em;
 }
 
 .icon-container {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
 }
 
 .fa.fa-star {
-    font-size: 275px;
+    font-size: 12em;
     margin: auto;
     cursor: pointer;
     color: var(--light-green);
@@ -88,3 +114,43 @@ h1 {
 .hidden {
     display: none;
 }
+
+.five-pointed-star {
+  --star-color:orange;
+  margin:1em auto;
+  font-size:7em;
+  position: relative;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-right: 1em solid transparent;
+  border-bottom: 0.7em solid var(--star-color);
+  border-left: 1em solid transparent;
+  transform: rotate(35deg);
+ }
+ .five-pointed-star:before {
+  border-bottom: 0.8em solid var(--star-color);
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -0.45em;
+  left: -0.65em;
+  display: block;
+  content:"";
+  transform: rotate(-35deg);
+ }
+ .five-pointed-star:after {
+  position: absolute;
+  display: block;
+  top: 0.03em;
+  left: -1.05em;
+  width: 0;
+  height: 0;
+  border-right: 1em solid transparent;
+  border-bottom: 0.7em solid var(--star-color);
+  border-left: 1em solid transparent;
+  transform: rotate(-70deg);
+  content:"";
+ }
