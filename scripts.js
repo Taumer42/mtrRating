@@ -54,7 +54,7 @@ function init() {
 function updateStarsColor() {
     stars.forEach((star, idx) => {
         if (idx < starRate) {
-            star.style.color = 'blue'
+            star.style.color = 'orange'
         } else {
             star.style.color = '#BDCBB4'
         }
