@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!--Title-->
+    <title>Оцінка послуг</title>
+
+    <!--Scripts-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Upper part -->
+    <header>
+        <img class="image1" src="/assets/logo.jpg">
+        <h1>MTR</h1>
+    </header>
+
+    <main>
+        <!--Center text  -->
+        <div id="specialists" class="spec-container">
+            <h1 class="header">Оберіть спеціаліста</h1>
+            <!--Buttons-->
+            <div class="button-container">
+                <!--Sergiy-->
+                <div class="spec-button" id="spec-1">
+                    <img class="image" src="/assets/123.jpg">
+                    <h1 class="spec-name">Sergiy</h1>
+                </div>
+                <!--Alex-->
+                <div class="spec-button" id="spec-2">
+                    <img class="image" src="/assets/234.jpg">
+                    <h1 class="spec-name">Alex</h1>
+                </div>
+            </div>
+        </div>
+
+        <!--Review-->
+        <div id="review" class="review-container hidden">
+            <h1 class="header">Оцініть надані послуги</h1>
+            <div class="icon-container">
+                <i class="fa fa-star star" id="star1"></i>
+                <i class="fa fa-star star" id="star2"></i>
+                <i class="fa fa-star star" id="star3"></i>
+                <i class="fa fa-star star" id="star4"></i>
+                <i class="fa fa-star star" id="star5"></i>
+            </div>
+            <input id="review-input" class="review-input" type="text"></input>
+            <button id="submit-btn" class="submit-btn"></button>
+        </div>
+        <div id="thnx" class="thnx hidden">
+            <h1>Дякую за відгук!</h1>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
