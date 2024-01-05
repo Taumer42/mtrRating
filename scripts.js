@@ -56,7 +56,7 @@ function updateStarsColor() {
         if (idx < starRate) {
             star.style.color = 'blue'
         } else {
-            star.style.color = 'black'
+            star.style.color = '#BDCBB4'
         }
     })
 }
