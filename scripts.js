@@ -34,6 +34,10 @@ function openReview() {
 }
 
 function sayThanks() {
+  fetch('http://localhost:3000/rating', {method: 'POST', body: JSON.stringify({
+    specialistID: selectedSpec,
+    starRate
+})})
     reviewContainer.classList.toggle('hidden')
     thanksContainer.classList.toggle('hidden')
     setTimeout(init, 1000)
