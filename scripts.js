@@ -3,8 +3,10 @@ const reviewContainer = document.getElementById('review')
 const thanksContainer = document.getElementById('thnx')
 const stars = document.querySelectorAll('.fa-star')
 const subBtn = document.getElementById('submit-btn')
-let selectedSpec;
+let selectedSpec
 let starRate = 0
+let review
+let date
 
 document.querySelectorAll('.spec-button').forEach(element => {
     element.addEventListener('click', (ev) => {
@@ -34,10 +36,20 @@ function openReview() {
 }
 
 function sayThanks() {
-  fetch('http://localhost:3000/rating', {method: 'POST', body: JSON.stringify({
-    specialistID: selectedSpec,
-    starRate
-})})
+    review = document.querySelector('.review-input').value
+    date = new Date()
+    console.log(review)
+    console.log(date)
+
+    fetch('http://localhost:3000/rating', {
+        method: 'POST', body: JSON.stringify({
+            specialistID: selectedSpec,
+            starRate,
+            review,
+            date
+        })
+    })
+
     reviewContainer.classList.toggle('hidden')
     thanksContainer.classList.toggle('hidden')
     setTimeout(init, 1000)
@@ -46,12 +58,17 @@ function sayThanks() {
 function init() {
     selectedSpec = undefined;
     starRate = 0
+    document.querySelector('.review-input').value = ""
+    review = undefined
+
     thanksContainer.classList.toggle('hidden')
     specContainer.classList.toggle('hidden')
+
     updateStarsColor()
     console.log({
         specialistID: selectedSpec,
-        starRate
+        starRate,
+        review
     })
 }
 
