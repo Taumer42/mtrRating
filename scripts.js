@@ -6,14 +6,12 @@ const subBtn = document.getElementById('submit-btn')
 let selectedSpec
 let starRate = 0
 let review
-let date
 
 document.querySelectorAll('.spec-button').forEach(element => {
     element.addEventListener('click', (ev) => {
         selectedSpec = ev.target.id ? ev.target.id : ev.target.parentNode.id
         selectedSpec = selectedSpec.replace('spec-', '')
         openReview()
-        console.log(selectedSpec)
     })
 });
 
@@ -21,10 +19,6 @@ stars.forEach(star => {
     star.addEventListener('click', (ev) => {
         starRate = ev.target.id.replace('star', '')
         updateStarsColor()
-        console.log({
-            specialistID: selectedSpec,
-            starRate
-        })
     })
 })
 
@@ -37,16 +31,18 @@ function openReview() {
 
 function sayThanks() {
     review = document.querySelector('.review-input').value
-    date = new Date()
-    console.log(review)
-    console.log(date)
 
     fetch('http://localhost:3000/rating', {
-        method: 'POST', body: JSON.stringify({
+        method: 'POST', 
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
             specialistID: selectedSpec,
             starRate,
             review,
-            date
+            date : new Date()
         })
     })
 
@@ -65,11 +61,6 @@ function init() {
     specContainer.classList.toggle('hidden')
 
     updateStarsColor()
-    console.log({
-        specialistID: selectedSpec,
-        starRate,
-        review
-    })
 }
 
 function updateStarsColor() {
