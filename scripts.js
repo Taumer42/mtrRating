@@ -33,22 +33,22 @@ function sayThanks() {
     review = document.querySelector('.review-input').value
 
     fetch('http://localhost:3000/rating', {
-        method: 'POST', 
+        method: 'POST',
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             specialistID: selectedSpec,
             starRate,
             review,
-            date : new Date()
+            date: new Date()
         })
     })
 
     reviewContainer.classList.toggle('hidden')
     thanksContainer.classList.toggle('hidden')
-    setTimeout(init, 1000)
+    setTimeout(init, 15000)
 }
 
 function init() {
